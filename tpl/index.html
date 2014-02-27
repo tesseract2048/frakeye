@@ -1,0 +1,37 @@
+{% include header.html %}
+
+<div class="inner cover">
+<h1 class="cover-heading"></h1>
+<p class="lead">turn eyes into...</p>
+<form id="form-upload" action="/frak" method="post" enctype="multipart/form-data">
+  <input type="file" name="img" class="hidden-file"/>
+  <p class="lead">
+    <input type="radio" name="colormod" value="vampire" id="mod-vampire" checked="checked" />
+    <label for="mod-vampire">vampire</label> 
+    <input type="radio" name="colormod" value="hollow" id="mod-hollow" />
+    <label for="mod-hollow">hollow</label> 
+    <input type="radio" name="colormod" value="cataract" id="mod-cataract" />
+    <label for="mod-cataract">cataract</label>
+  </p>
+  <p class="lead">
+    <a href="#" class="btn btn-lg btn-default" id="btn-upload">select faces</a>
+  </p>
+  <div id="indicator">
+    <img src="/static/ajax-loader.gif" />
+  </div>
+</form>
+</div>
+
+<script type="text/javascript">
+  $('#tag-home').addClass('active');
+  $('#btn-upload').click(function() {
+    $('.hidden-file').trigger('click');
+  });
+  $('.hidden-file').change(function() {
+    $('#btn-upload').attr('disabled', 'disabled');
+    $('#indicator').fadeIn();
+    $('#form-upload').submit();
+  });
+</script>
+
+{% include footer.html %}

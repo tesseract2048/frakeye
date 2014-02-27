@@ -1,0 +1,26 @@
+{% include header.html %}
+
+<div class="inner cover">
+<h1 class="cover-heading"></h1>
+<p class="lead">
+  {% if count>=2 %}
+  don't be scared.
+  {% else %}
+  something went wrong...
+  {% end %}
+</p>
+<p class="lead">
+  <a href="/frak-pic?x={{ checksum }}" target="_blank">
+    <img src="/frak-pic?x={{ checksum }}" width="{{ width }}" height="{{ height }}"/>
+  </a>
+</p>
+<p class="lead">
+  <a href="/" class="btn btn-lg btn-default">go back</a>
+</p>
+</div>
+
+<script type="text/javascript">
+$('#tag-home').addClass('active');
+</script>
+
+{% include footer.html %}
