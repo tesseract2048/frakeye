@@ -92,9 +92,9 @@ def range_overlap(a_min, a_max, b_min, b_max):
 def intersect(s1, s2):
     return range_overlap(s1[0], s1[0]+s1[2], s2[0], s2[0]+s2[2]) and range_overlap(s1[1], s1[1]+s1[3], s2[1], s2[1]+s2[3])
 
-face_cascade = cv2.CascadeClassifier('/homebrew-master/Cellar/opencv/2.4.7.1/share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml')
-eyeglass_cascade = cv2.CascadeClassifier('/homebrew-master/Cellar/opencv/2.4.7.1/share/OpenCV/haarcascades/haarcascade_eye_tree_eyeglasses.xml')
-eye_cascade = cv2.CascadeClassifier('/homebrew-master/Cellar/opencv/2.4.7.1/share/OpenCV/haarcascades/haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier('classifier/haarcascade_frontalface_alt2.xml')
+eyeglass_cascade = cv2.CascadeClassifier('classifier/haarcascade_eye_tree_eyeglasses.xml')
+eye_cascade = cv2.CascadeClassifier('classifier/haarcascade_eye.xml')
 
 def process(img, colormod):
     ht, wt, depth = img.shape
